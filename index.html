@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RPG POO</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="src/style.css" />
+</head>
+<body class="bg-light">
+
+  <nav class="navbar bg-dark text-white px-4 py-3 mb-4">
+    <h1 class="h4 m-0">🛡️ RPG POO — Painel do Herói</h1>
+    <span class="badge bg-warning text-dark fs-6">
+      Personagem + Inventário + DOM
+    </span>
+  </nav>
+
+  <main class="container">
+
+    <!-- Seletor de herói: cada botão troca o heroiAtivo (instância controlada) -->
+    <div class="mb-4">
+      <span class="me-2 fw-bold">Escolha seu herói:</span>
+      <span id="botoes-herois"></span>
+    </div>
+
+    <div class="row g-3">
+      <!-- Card do herói (gerado pelo JS a partir da instância em heroiAtivo) -->
+      <div class="col-md-6">
+        <div class="card shadow-sm" id="card-heroi"></div>
+      </div>
+
+      <!-- Card do inimigo (instância "goblin") -->
+      <div class="col-md-6">
+        <div class="card shadow-sm border-danger" id="card-inimigo"></div>
+      </div>
+    </div>
+
+    <hr class="my-4" />
+
+    <!-- Ações do herói: cada botão chama um wrapper que aciona um método da classe -->
+    <h2 class="h5">⚔ Ações do herói</h2>
+    <div id="acoes" class="mb-3">
+      <button class="btn btn-danger me-2 mb-2" onclick="acaoAtacar()">Atacar</button>
+      <button class="btn btn-info me-2 mb-2" onclick="acaoDefender()">Defender</button>
+      <button class="btn btn-primary me-2 mb-2" onclick="acaoUsarMagia()">Usar Magia</button>
+      <button class="btn btn-success me-2 mb-2" onclick="acaoSubirNivel()">Subir Nível</button>
+      <button class="btn btn-dark me-2 mb-2" onclick="acaoGoblinAtaca()">Goblin ataca</button>
+    </div>
+
+    <h2 class="h5">🎒 Inventário</h2>
+    <div class="mb-3">
+      <button class="btn btn-outline-secondary me-2 mb-2" onclick="acaoAdicionarItem('espada')">+ Espada</button>
+      <button class="btn btn-outline-secondary me-2 mb-2" onclick="acaoAdicionarItem('pocao')">+ Poção</button>
+      <button class="btn btn-outline-secondary me-2 mb-2" onclick="acaoAdicionarItem('escudo')">+ Escudo</button>
+    </div>
+    <ul class="list-group mb-4" id="lista-inventario"></ul>
+
+    <h2 class="h5">📜 Log da aventura</h2>
+    <div id="log-narrativo" class="log-narrativo p-3 mb-5"></div>
+
+  </main>
+
+  <script src="src/app.js"></script>
+</body>
+</html>

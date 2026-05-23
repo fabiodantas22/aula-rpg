@@ -1,0 +1,38 @@
+body {
+  font-family: system-ui, sans-serif;
+}
+
+.card {
+  transition: transform 0.15s;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+}
+
+/* Log narrativo — visual de "terminal" do RPG */
+.log-narrativo {
+  background: #1e1e2f;
+  color: #d8e3ff;
+  font-family: "Cascadia Code", "Consolas", monospace;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  height: 220px;
+  overflow-y: auto;
+  border: 1px solid #2a2a44;
+}
+
+.log-narrativo div {
+  padding: 2px 0;
+  border-bottom: 1px dashed #2a2a44;
+}
+
+.log-narrativo div:first-child {
+  color: #ffd479; /* mensagem mais recente em destaque */
+}
+
+/* Barras de HP/Mana mais "chunky" */
+.progress {
+  background-color: #e9ecef;
+  border-radius: 6px;
+}
